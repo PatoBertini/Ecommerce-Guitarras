@@ -1,0 +1,22 @@
+.display {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgb(245, 245, 245, 0.8);
+  left: 6.8%;
+}
+
+.carritoConteiner {
+  position: absolute;
+  padding: 0.5rem;
+  top: 1%;
+  right: 8%;
+  border: 1px solid black;
+  background-color: antiquewhite;
+  font-size: 2rem;
+  color: black;
+  cursor: pointer;
+  z-index: 999;
+  
+  
+}

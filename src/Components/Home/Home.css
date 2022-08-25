@@ -1,0 +1,38 @@
+.primerBanner img {
+  width: 500px;
+  height: 43.4vh;
+  position: absolute;
+  left: 58.5%;
+  top: 0;
+  opacity: 0.9;
+}
+
+.primerBanner {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1%;
+  height: 40vh;
+}
+
+.primerBanner h1 {
+  font-size: 2rem;
+  
+  color: burlywood;
+}
+
+.primerBanner h2 {
+  font-size: 3rem;
+  color: aliceblue;
+}
+
+.primerBanner h6 {
+    font-size: 1.4rem;
+
+}
+
+.primerBanner h1,
+h2,
+h6 {
+  padding: 10px;
+  width: 50%;
+  letter-spacing: 1px;
+}

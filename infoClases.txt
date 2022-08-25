@@ -1,0 +1,38 @@
+Componentes de clase
+
+Es una clase de javascript que retorna un elemento JSX.
+a) Estructura: 
+- metodos:  es una  funcion asociada a un componente que puede acceder y usar su estado.
+- estado
+b) Caracteristicas:
+- deben extender React.Componentes
+- Deben tener un metodo render() para retornar un elemento de JSX
+- pueden recibir props si es necesario
+
+1) metodo render()
+Es un metodo que retorna la estructura del componente en JSX 
+Es el unico metodo obligatorio para un componente de clase en React
+
+2) props
+Los componentes de clase tambien pueden recibir props. (this.props.nombreDelProp)
+
+3) this se refiere al componente actual que se esta llamando, a ese elemento
+4) constructor: metodo usado para inicializar el estado de un componentee de react y es llamado automaticamente cuando se crea un componente
+este debe llamar a super() para heredar todas las funciones de su componente padre (react.component)
+- props en el constructor; este debe ser pasado al constructor y a super()
+-estado en el constructor: el objeto "state" se inicializa en el constructor
+- acceder al estado: this.state.propiedad
+- para actualizar una o mas propiedades del objeto "state" se llama a this.setState({ aca van las propiedades}) y se pasa como argumento un objeto con las propiedades que sen van a actualizar y sus valores.
+- metodos de ciclo de vida: metodos especiales para realizar operaciones con componentes en momentos especificos de su vida en el DOM. 
+
+
+Para desesctructurar keys y values
+
+const comision = props.test
+const {test} = props
+
+operacion ternario ? " " : " "
+
+funcion children averiguar
+
+app > ItemListContainer > CartWidget

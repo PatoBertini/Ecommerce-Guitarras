@@ -1,0 +1,25 @@
+.item {
+    width: 150px;
+    height: 150px;
+}
+
+.guitarCard {
+    border: 2px black solid;
+    padding: 1rem;
+    width: 200px;
+    justify-content: center;
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto ;
+    grid-template-areas: 
+    'primer primer primer primer primer'
+    ;
+}
+
+.topContainer {
+    grid-area: primer;
+    height: 200px;
+}
