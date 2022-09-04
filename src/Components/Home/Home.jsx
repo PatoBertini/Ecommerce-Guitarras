@@ -1,15 +1,47 @@
 import "./Home.css";
-import himg from "../../assets/images/g7.jpg";
+import himg from "../../assets/images/foto-carousel-1.jpeg";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 const Home = () => {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
+
   return (
     <div>
       <div className="primerBanner">
-        <h1>Welcome to the Guitarrin</h1>
-        <h2>The Market Leaders in Carbon Fiber Acoustic & Electro-Hybrid Guitars.</h2>
-        <h6>The first Ecommerce with online and physical shop!</h6>
-
-        <img src={himg} alt="fondo" />
+        <Carousel responsive={responsive} infinite={true}>
+          <div>
+          <img src={himg} alt="" />
+           
+          </div>
+          <div>
+            <h1>ACOUSTIC GUITARS</h1>
+          </div>
+          <div>
+            <h1>DRUMS GUITARS</h1>
+          </div>
+          <div>
+            <h1>CLASSICS GUITARS</h1>
+          </div>
+        </Carousel>
       </div>
     </div>
   );

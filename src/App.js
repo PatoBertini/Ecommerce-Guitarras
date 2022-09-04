@@ -2,12 +2,8 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Layout from "./Components/Layout/Layout";
 import Home from "./Components/Home/Home";
-import Classic from "./Components/Guitars/Classic/Classic";
-import Acoustic from "./Components/Guitars/Acoustic/Acoustic";
-import Electric from "./Components/Guitars/Electric/Electric";
-import Parts from "./Components/Guitars/Parts/Parts";
-import Accesories from "./Components/Guitars/Accessories/Accesories";
-import Offers from "./Components/Guitars/Offers/Offers";
+import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
+import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 
 function App() {
   return (
@@ -15,16 +11,20 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path='/classic' element={<Classic/>}/>
-          <Route path='/acoustic' element={<Acoustic/>}/>
-          <Route path='/electric' element={<Electric/>}/>
-          <Route path='/parts' element={<Parts/>}/>
-          <Route path='/accessories' element={<Accesories/>}/>
-          <Route path='/offers' element={<Offers/>}/>
-
-
-        </Route>
+          <Route
+            path="/category/:categoryName"
+            element={<ItemListContainer />}
+          />
+        <Route
+          path="/detail/:idProducto"
+          element={<ItemDetailContainer/>}
+        />
+        {/* <Route
+          path="/cart"
+          element={<Cart/>}
+        /> */}
         <Route path="*" element={<h1>Error 404 Element Not Found</h1>}></Route>
+        </Route>
       </Routes>
     </>
   );

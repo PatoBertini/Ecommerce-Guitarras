@@ -1,41 +1,66 @@
-export const guitarras =[
+export const guitarras = [
   {
     id: 1,
     nombre: "Virtuo",
-    precio: "Precio: " + 21325 + "$",
-    img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362820/X20-12._jpg_npyxcy.webp"
+    precio: 21325,
+    stock: 10,
+    category: 'electric',
+    img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362820/X20-12._jpg_npyxcy.webp",
   },
   {
     id: 2,
     nombre: "X7-Parlor Guitar",
-    precio: "Precio: " + 32325 + "$",
-    img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/x7-Carbon-Blue_ohqemh.webp"
-  }
-  ,
+    precio: 32325,
+    stock: 10,
+    category: 'acoustic',
+    img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/x7-Carbon-Blue_ohqemh.webp",
+  },
   {
     id: 3,
     nombre: "X7-12",
-    precio: "Precio: " + 34325 + "$",
-    img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/virtuo-claroWalnut_uzwnrh.webp"
-  }
-  ,
+    precio: 34325,
+    stock: 10,
+    category: 'classic',
+    img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/virtuo-claroWalnut_uzwnrh.webp",
+  },
   {
     id: 4,
     nombre: "X10 Slimline",
-  precio: "Precio: " + 31657 + "$",
-    img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/X10Slimline-Nylon._jpg_j8mwo0.webp"
-  }
-  ,
+    precio: 31657,
+    stock: 10,
+    category: 'electric',
+    img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/X10Slimline-Nylon._jpg_j8mwo0.webp",
+  },
   {
-    i: 5,
+    id: 5,
     nombre: "X20-12",
-    precio: "Precio: " + 21578 + "$",
-    img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/X10-carbon-green._jpg_uwd4jp.webp"
+    precio: 21578,
+    stock: 10,
+    category: 'classic',
+    img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/X10-carbon-green._jpg_uwd4jp.webp",
   },
   {
     id: 6,
     nombre: "X20-12 Lefty",
-    precio: "Precio: " + 29523 + "$",
-    img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/X10-carbon-green._jpg_uwd4jp.webp"
-  }
-]
+    precio: 29523,
+    stock: 10,
+    category: 'acoustic',
+    img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/X10-carbon-green._jpg_uwd4jp.webp",
+  },
+  {
+    id: 7,
+    nombre: "X20-12 Lefty",
+    precio: 29523,
+    stock: 10,
+    category: 'electric',
+    img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/X10-carbon-green._jpg_uwd4jp.webp",
+  },
+  {
+    id: 8,
+    nombre: "X20-12 Lefty",
+    precio: 29523,
+    stock: 10,
+    category: 'electric',
+    img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/X10-carbon-green._jpg_uwd4jp.webp",
+  },
+];

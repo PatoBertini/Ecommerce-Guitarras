@@ -1,14 +1,16 @@
-import './Item.css'
+import "./Item.css";
+import { Link } from "react-router-dom";
 
-const Item = ({ id, img, nombre, precio }) => {
+const Item = ({ item }) => {
   return (
-    <>
-      <div className="guitarCard">
-        <img src={img} alt="guitarra" className="item" />
-        <h3>{nombre}</h3>
-        <h5>{precio}</h5>
+    <div className="guitarCard">
+        <img src={item.img} alt="guitarra" className="item" />
+        <h3>{item.nombre}</h3>
+        <h5>$ {item.precio}</h5>
+        <h5>{item.category}</h5>
+      <Link to={`/detail/${item.id}`}>
         <button class="buy-b">
-          <span class="hover-underline-animation"> BUY </span>
+          <span class="hover-underline-animation"> Ver Detalles </span>
           <svg
             id="arrow-horizontal"
             xmlns="http://www.w3.org/2000/svg"
@@ -24,9 +26,9 @@ const Item = ({ id, img, nombre, precio }) => {
             ></path>
           </svg>
         </button>
-        <p>{id}</p>
-      </div>
-    </>
+      </Link>
+        <p>{item.id}</p>
+    </div>
   );
 };
 
