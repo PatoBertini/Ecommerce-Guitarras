@@ -1,12 +1,15 @@
 import React from "react";
 import { useState } from "react";
+import "../Cart/cart.css";
 
 const Form = () => {
   const [nombre, setNombre] = useState("");
+ 
 
   const handleSubmit = (event) => {
-    event.preventDefault()
-  }
+    event.preventDefault();
+    console.log(nombre);
+  };
 
   const handleNameInput = (event) => {
     setNombre(event.target.value);

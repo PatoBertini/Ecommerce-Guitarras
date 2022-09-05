@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
-const Counter = (initial, onAdd) => {
-  const stock = 10;
-  const [count, setCount] = useState(0);
+const Counter = ({ initial, onAdd, stock }) => {
+  const [count, setCount] = useState(initial);
 
   const sumar = () => {
     if (count === stock) {
@@ -24,13 +23,18 @@ const Counter = (initial, onAdd) => {
 
   return (
     <div>
-      <button onClick={sumar}>
-        <FontAwesomeIcon icon={faPlus} />
-      </button>
-      <span>{count}</span>
-      <button onClick={restar}>
-        <FontAwesomeIcon icon={faMinus} />
-      </button>
+      <div className="sumarRestar">
+        <button onClick={sumar}>
+          <FontAwesomeIcon icon={faPlus} />
+        </button>
+        <span>{count}</span>
+        <button onClick={restar}>
+          <FontAwesomeIcon icon={faMinus} />
+        </button>
+      </div>
+      <div className="agregarCarrito">
+        <button onClick={() => onAdd(count)}>Add Cart</button>
+      </div>
     </div>
   );
 };

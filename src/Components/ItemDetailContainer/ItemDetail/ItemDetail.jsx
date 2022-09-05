@@ -1,14 +1,30 @@
 import React from "react";
 import "../ItemDetail.css";
+import Counter from "../../Counter/Counter";
+import { useState } from "react";
+import { Link } from 'react-router-dom';
+
 
 const ItemDetail = ({ product }) => {
+  const [cantidad, setCantidad] = useState(0);
+
+  const onAdd = (count) => {
+    setCantidad(count)
+  }
+
   return (
     <div className="itemDetailConteiner">
       <div className="itemDetail">
-      <img src={product.img} alt="" />
+        <img src={product.img} alt="" />
         <h2>{product.nombre}</h2>
-        <h3>aca va el precio</h3>
-        <button>agregar al carrito</button>
+        <h3>Price: $ {product.precio}</h3>
+        {cantidad === 0 ? (
+                    <h2>Cantidad es 0</h2>
+                ) : (
+                    <h2>Cantidad es {cantidad}</h2>
+                )}
+        <Counter stock={product.stock} initial={1} onAdd={onAdd} />
+        <Link to="/cart">Ir al carrito</Link>
       </div>
     </div>
   );
