@@ -9,10 +9,10 @@ const ItemListContainer = () => {
 
   // useParams returns an object of key/value pairs of URL parameters
   const parametroURL = useParams(); // desestructuramos parametroURL
-  console.log(parametroURL);
+  // console.log(parametroURL);
 
   const { categoryName } = useParams();// muy importante usar mismo nombre que en el path de app.js 
-  console.log(categoryName);
+  // console.log(categoryName);
 
   useEffect(() => {
     const getProducts = new Promise((res, rej) => {

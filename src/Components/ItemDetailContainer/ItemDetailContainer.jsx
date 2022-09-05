@@ -5,7 +5,7 @@ import { guitarras } from "../../mock/guitarras";
 import "./ItemDetail.css";
 
 const ItemDetailContainer = () => {
-  const [product, setProduct] = useState([]);
+  const [product, setProduct] = useState({});
 
   const { idProducto } = useParams(); // muy importante usar mismo nombre que en el path de app.js 
   // console.log(idProducto);
@@ -16,8 +16,9 @@ const ItemDetailContainer = () => {
     const getItem = () =>
       new Promise((res, rej) => {
         const prodVisible = guitarras.find(
-          (id) => id.guitarras === idProdNumerico
+          (prod) => prod.id === idProdNumerico
         );
+        console.log(prodVisible);
         setTimeout(() => {
           res(prodVisible);
         }, 1000);
