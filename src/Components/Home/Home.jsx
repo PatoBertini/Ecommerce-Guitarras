@@ -1,12 +1,15 @@
 import "./Home.css";
-import himg from "../../assets/images/foto-carousel-1.jpeg";
+import car1 from "../../assets/images/g9.jpg";
+import car2 from "../../assets/images/g3.jpg";
+import car3 from "../../assets/images/g4.jpg";
+import car4 from "../../assets/images/g6.jpg";
+
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const Home = () => {
   const responsive = {
     superLargeDesktop: {
-      // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
@@ -27,18 +30,28 @@ const Home = () => {
   return (
     <div>
       <div className="primerBanner">
-        <Carousel responsive={responsive} infinite={true}>
-          <div>
-          <img src={himg} alt="" />
-           
+        <Carousel
+          responsive={responsive}
+          infinite={true}
+          draggable={true}
+          className="slider"
+        >
+          <div className="carousel-div">
+            <img src={car1} alt="" />
+            <h1>Find your best guitarr</h1>
+
           </div>
-          <div>
+          <div className="carousel-div">
+            <img src={car2} alt="" />
             <h1>ACOUSTIC GUITARS</h1>
           </div>
-          <div>
+          <div className="carousel-div">
+            <img src={car3} alt="" />
+
             <h1>DRUMS GUITARS</h1>
           </div>
-          <div>
+          <div className="carousel-div">
+          <img src={car4} alt="" />
             <h1>CLASSICS GUITARS</h1>
           </div>
         </Carousel>

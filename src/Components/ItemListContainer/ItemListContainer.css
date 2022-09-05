@@ -1,35 +1,19 @@
-.item {
-    width: 70%;
-    height: 70%;
-    /* object-fit: cover; */
-   
-}
-
-.guitarCard {
-    border: 2px black solid;
-    padding: 1rem;
-    width: 200px;
-    height: 300px;
-    justify-content: center;
-    margin: 0 5px;
-}
-
+/* ItemListContainer */
 .sectionContainer {
-    display: flex;
-    flex-direction: column;
-    padding: 9px 9%;
-    
+  display: flex;
+  flex-direction: column;
+  padding: 9px 9%;
 }
 
 .itemsContainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.topContainer {
-    grid-area: primer;
-    height: 200px;
-}
+
+
+
+
+

@@ -1,5 +1,9 @@
-.itemDetail {
+.itemDetailConteiner {
     background-color: aqua;
-    height: 300px;
-    width: 300px;
+    padding: 10% 15%;
+}
+
+.itemDetail {
+    border: 1px solid black;
+    height: 40vh;
 }
