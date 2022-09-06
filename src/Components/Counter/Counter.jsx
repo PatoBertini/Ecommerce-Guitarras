@@ -21,22 +21,29 @@ const Counter = ({ initial, onAdd, stock }) => {
     }
   };
 
+  const agregar = () => {
+    onAdd(count);
+  };
+
   return (
     <div>
       <div className="sumarRestar">
+        <span>Cantidad: {count}</span>
         <button onClick={sumar}>
           <FontAwesomeIcon icon={faPlus} />
         </button>
-        <span>{count}</span>
+
         <button onClick={restar}>
           <FontAwesomeIcon icon={faMinus} />
         </button>
       </div>
       <div className="agregarCarrito">
-        <button onClick={() => onAdd(count)}>Add Cart</button>
+        <button onClick={agregar}>Add Cart</button>
       </div>
     </div>
   );
 };
 
 export default Counter;
+
+// El Add Cart, envia la data de count al padre. lo envia como parametro y lo recibe como argumento

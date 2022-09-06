@@ -8,9 +8,11 @@ import { Link } from 'react-router-dom';
 const ItemDetail = ({ product }) => {
   const [cantidad, setCantidad] = useState(0);
 
-  const onAdd = (count) => {
-    setCantidad(count)
+  const onAdd = (cantidad) => {
+    console.log(cantidad);
+    setCantidad(cantidad)
   }
+  // Esta funcion esta declarada en el padre y se ejecuta en el hijo, cuando hace click el hijo envia la data por parametro
 
   return (
     <div className="itemDetailConteiner">
@@ -18,13 +20,13 @@ const ItemDetail = ({ product }) => {
         <img src={product.img} alt="" />
         <h2>{product.nombre}</h2>
         <h3>Price: $ {product.precio}</h3>
-        {cantidad === 0 ? (
-                    <h2>Cantidad es 0</h2>
-                ) : (
-                    <h2>Cantidad es {cantidad}</h2>
-                )}
-        <Counter stock={product.stock} initial={1} onAdd={onAdd} />
-        <Link to="/cart">Ir al carrito</Link>
+        {
+          cantidad === 0
+          ? (<Counter stock={product.stock} initial={1} onAdd={onAdd} />)
+          : (<Link to="/cart">Ir al carrito</Link>)
+        }
+        
+       
       </div>
     </div>
   );
