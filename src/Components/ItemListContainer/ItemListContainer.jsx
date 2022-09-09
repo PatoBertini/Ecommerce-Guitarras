@@ -34,7 +34,8 @@ const ItemListContainer = () => {
 
   return (
     <div className="sectionContainer">
-      <h2>Acoustic guitars</h2>
+    
+      <h2>Explore Models</h2>
       <div className="itemsContainer">
         <ItemList items={items} />
       </div>

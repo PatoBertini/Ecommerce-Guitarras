@@ -5,6 +5,7 @@ export const guitarras = [
     precio: 21325,
     stock: 10,
     category: 'electric',
+    subcategory: 'Electric/Acoustic Hybrid',
     img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362820/X20-12._jpg_npyxcy.webp",
   },
   {
@@ -13,6 +14,7 @@ export const guitarras = [
     precio: 32325,
     stock: 10,
     category: 'acoustic',
+    subcategory: '6-String Signature Acoustic',
     img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/x7-Carbon-Blue_ohqemh.webp",
   },
   {
@@ -21,6 +23,7 @@ export const guitarras = [
     precio: 34325,
     stock: 10,
     category: 'classic',
+    subcategory: 'String Archtop Guitar',
     img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/virtuo-claroWalnut_uzwnrh.webp",
   },
   {
@@ -29,6 +32,7 @@ export const guitarras = [
     precio: 31657,
     stock: 10,
     category: 'electric',
+    subcategory: 'Electric/Acoustic Hybrid',
     img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/X10Slimline-Nylon._jpg_j8mwo0.webp",
   },
   {
@@ -37,6 +41,7 @@ export const guitarras = [
     precio: 21578,
     stock: 10,
     category: 'classic',
+    subcategory: 'String Baritone Classic',
     img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/X10-carbon-green._jpg_uwd4jp.webp",
   },
   {
@@ -45,6 +50,7 @@ export const guitarras = [
     precio: 29523,
     stock: 10,
     category: 'acoustic',
+    subcategory: 'String Jumbo Acoustic',
     img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/X10-carbon-green._jpg_uwd4jp.webp",
   },
   {
@@ -53,6 +59,7 @@ export const guitarras = [
     precio: 29523,
     stock: 10,
     category: 'electric',
+    subcategory: 'Electric/Acoustic Hybrid',
     img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/X10-carbon-green._jpg_uwd4jp.webp",
   },
   {
@@ -61,6 +68,16 @@ export const guitarras = [
     precio: 29523,
     stock: 10,
     category: 'electric',
+    subcategory: 'String Fanned Fret Electric',
     img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1661362819/X10-carbon-green._jpg_uwd4jp.webp",
+  },
+  {
+    id: 9,
+    nombre: "Electrica marron",
+    precio: 29523,
+    stock: 10,
+    category: 'electric',
+    subcategory: 'String Nylon Electric',
+    img: "https://res.cloudinary.com/dd4ko3egd/image/upload/v1662706101/01-electrica-marron_ay4kx8.webp",
   },
 ];

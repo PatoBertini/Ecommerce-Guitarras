@@ -5,10 +5,11 @@ import Home from "./Components/Home/Home";
 import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import Cart from "./Components/Cart/Cart";
+import CartProvider from "./context/CartContext";
 
 function App() {
   return (
-    <>
+    <CartProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -27,7 +28,7 @@ function App() {
         <Route path="*" element={<h1>Error 404 Element Not Found</h1>}></Route>
         </Route>
       </Routes>
-    </>
+    </CartProvider>
   );
 }
 

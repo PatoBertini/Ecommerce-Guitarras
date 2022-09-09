@@ -4,3 +4,14 @@
     justify-content: center;
     height: 60vh;
 }
+
+.cartImg{
+    width: 200px;
+    height: 200px;
+}
+
+.cartItem {
+    border: 1px solid black;
+}
+
+

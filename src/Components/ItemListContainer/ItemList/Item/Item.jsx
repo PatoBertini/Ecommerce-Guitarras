@@ -4,16 +4,15 @@ import { Link } from "react-router-dom";
 const Item = ({ item }) => {
   return (
     <div className="guitarCard">
+      <Link to={`/detail/${item.id}`} className="linkDetail">
       <div className="imgCardConteiner">
         <img src={item.img} alt="guitarra" className="item" />
       </div>
       <div className="textCardConteiner">
         <h3>{item.nombre}</h3>
-        <h5>Price: $ {item.precio}</h5>
-        <h5>{item.category}</h5>
+        <h5>{item.subcategory}</h5>
       </div>
-      <Link to={`/detail/${item.id}`}>
-        <button className="b-buy">
+        {/* <button className="b-buy">
           <span className="hover-underline-animation"> Shop now </span>
           <svg
             viewBox="0 0 46 16"
@@ -29,7 +28,7 @@ const Item = ({ item }) => {
               id="Path_10"
             ></path>
           </svg>
-        </button>
+        </button> */}
       </Link>
       {/* <p>{item.id}</p> */}
     </div>

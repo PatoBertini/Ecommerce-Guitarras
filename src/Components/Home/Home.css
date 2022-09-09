@@ -1,23 +1,59 @@
-.carousel-div {
-    /* width: 80vw; */
-    height: 80vh;
+/* Banner section */
+.bannerConteiner {
+  display: flex;
+  height: 70vh;
+}
+.bannerTextContent {
+  width: 100%;
+}
 
+.bannerTextContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Carousel Section */
+.carousel-div {
+  width: 100%;
+  height: 80vh;
+  object-fit: contain;
 }
 
 .carousel-div img {
-    height: 80vh;
-    width: 35vw;
-    position: relative;
-    z-index: 0;
-
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 0;
 }
 
 .carousel-div h1 {
-    position: absolute;
-    top: 30%;
-    z-index: 1;
-    font-size: 3rem;
-    letter-spacing: 0.7rem;
-    text-align: center;
-    color: white;
+  position: absolute;
+  top: 30%;
+  z-index: 1;
+  font-size: 3rem;
+  letter-spacing: 0.7rem;
+  text-align: center;
+  color: white;
+}
+
+.bestSellerConteiner{
+    height: 70vh;
+    display: flex;
+    
+    /* flex-direction: column; */
+}
+.bestSellerData{
+    flex: 1;
+}
+
+.bestSellerCards {
+    width: 50%;
+   
 }

@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faMinus, faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import "../ItemDetailContainer/ItemDetail.css";
+
+
 
 const Counter = ({ initial, onAdd, stock }) => {
   const [count, setCount] = useState(initial);
@@ -28,17 +31,20 @@ const Counter = ({ initial, onAdd, stock }) => {
   return (
     <div>
       <div className="sumarRestar">
-        <span>Cantidad: {count}</span>
-        <button onClick={sumar}>
+        <span>Quantity: {count}</span>
+        <button className="buttonq" onClick={sumar}>
           <FontAwesomeIcon icon={faPlus} />
         </button>
 
-        <button onClick={restar}>
+        <button className="buttonq" onClick={restar}>
           <FontAwesomeIcon icon={faMinus} />
         </button>
       </div>
       <div className="agregarCarrito">
-        <button onClick={agregar}>Add Cart</button>
+        <button className="buttonDetail" onClick={agregar}>
+         
+        <FontAwesomeIcon icon={faCartPlus} className="buttonCart" /> Add Cart
+        </button>
       </div>
     </div>
   );

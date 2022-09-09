@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
         const prodVisible = guitarras.find(
           (prod) => prod.id === idProdNumerico
         );
-        console.log(prodVisible);
+        // console.log(prodVisible);
         setTimeout(() => {
           res(prodVisible);
         }, 1000);
