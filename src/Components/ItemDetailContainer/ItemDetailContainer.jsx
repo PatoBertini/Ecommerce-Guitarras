@@ -6,8 +6,9 @@ import "./ItemDetail.css";
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
 
-  const { idProducto } = useParams(); // muy importante usar mismo nombre que en el path de app.js 
+  const { idProducto } = useParams(); // muy importante usar mismo nombre que en el path de app.js
   // console.log(idProducto);
   const idProdNumerico = Number(idProducto);
   // console.log(idProdNumerico);
@@ -30,14 +31,17 @@ const ItemDetailContainer = () => {
       })
       .catch((error) => {
         console.log(error);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
+  
   }, [idProdNumerico]);
 
   return (
     <div>
       <h1>ItemDetailContainer</h1>
-
-      <ItemDetail product={product} />
+      {isLoading ? <h1> LOADING...</h1> : <ItemDetail product={product} />}
     </div>
   );
 };

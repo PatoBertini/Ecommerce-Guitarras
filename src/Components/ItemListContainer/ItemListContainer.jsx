@@ -6,15 +6,19 @@ import { useParams } from "react-router-dom";
 
 const ItemListContainer = () => {
   const [items, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   // useParams returns an object of key/value pairs of URL parameters
   const parametroURL = useParams(); // desestructuramos parametroURL
   // console.log(parametroURL);
 
-  const { categoryName } = useParams();// muy importante usar mismo nombre que en el path de app.js 
+  const { categoryName } = useParams(); // muy importante usar mismo nombre que en el path de app.js
   // console.log(categoryName);
 
   useEffect(() => {
+    console.log("inicioEfectCorriendo");
+
+    // setIsLoading(true);
     const getProducts = new Promise((res, rej) => {
       const prodFiltrados = guitarras.filter(
         (guitarra) => guitarra.category === categoryName
@@ -29,15 +33,22 @@ const ItemListContainer = () => {
       })
       .catch((error) => {
         console.log(error);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
+    console.log("efectCorriendo");
+    return () => {
+      console.log("limpieza");
+      setIsLoading(true);
+    };
   }, [categoryName]);
 
   return (
     <div className="sectionContainer">
-    
       <h2>Explore Models</h2>
       <div className="itemsContainer">
-        <ItemList items={items} />
+        {isLoading ? <h1> LOADING...</h1> : <ItemList items={items} />}
       </div>
     </div>
   );

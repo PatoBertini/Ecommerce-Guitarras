@@ -12,13 +12,13 @@ const ItemDetail = ({ product }) => {
   // desestructuramos useContext y obtenemos la funcion addToCart del context CartContext
 
   const onAdd = (quantity) => {
-    setCantidad(quantity);
+    setCantidad((prevState)=>prevState + quantity);
     addToCart(product, quantity);
     isInCart(product);
   };
   // Esta funcion esta declarada en el padre y se ejecuta en el hijo, cuando hace click el hijo envia la data por parametro
 
-  // console.log(cart);
+  console.log(cart);
 
   return (
     <div className="itemDetailConteiner">
