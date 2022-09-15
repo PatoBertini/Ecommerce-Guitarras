@@ -18,7 +18,7 @@ const ItemDetail = ({ product }) => {
   };
   // Esta funcion esta declarada en el padre y se ejecuta en el hijo, cuando hace click el hijo envia la data por parametro
 
-  console.log(cart);
+  
 
   return (
     <div className="itemDetailConteiner">
@@ -32,7 +32,7 @@ const ItemDetail = ({ product }) => {
           Virtuo is an acoustic guitar made specifically with the electric
           player in mind.
         </h2>
-        <h3>Price: $ {product.precio}</h3>
+        <h3>Price: € {product.precio}</h3>
         {cantidad === 0 ? (
           <Counter stock={product.stock} initial={1} onAdd={onAdd} />
         ) : (

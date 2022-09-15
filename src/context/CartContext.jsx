@@ -44,9 +44,20 @@ const CartProvider = ({ children }) => {
     setCart(newCartFilter);
   };
 
-  //todo: calcular total de unidades para el cart widget
+  //calcular total cart
+  const totalCart = () => {
+    let valorInicial = 0;
+    cart.forEach((prod) => (valorInicial += prod.precio * prod.cantidad));
+    console.log(valorInicial);
+    return valorInicial;
+  };
 
-  //todo: calcular total precio
+  // calcular total de unidades para el cart widget
+  const totalCartWidget = () => {
+    let valorInicial = 0;
+    cart.forEach((prod) => (valorInicial += prod.cantidad));
+    return valorInicial;
+  };
 
   //vaciar todo el carrito
   const clearCart = () => {
@@ -54,7 +65,15 @@ const CartProvider = ({ children }) => {
   };
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, clearCart, isInCart, removeItem }}
+      value={{
+        cart,
+        addToCart,
+        clearCart,
+        isInCart,
+        removeItem,
+        totalCart,
+        totalCartWidget,
+      }}
     >
       {children}
     </CartContext.Provider>

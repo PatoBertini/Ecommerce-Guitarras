@@ -1,17 +1,152 @@
 .formContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 60vh;
+  padding: 9px 9%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: auto;
 }
 
-.cartImg{
-    width: 200px;
-    height: 200px;
+.cartImg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.cartTable thead tr th {
+  font-size: 1.6rem;
+}
+
+.cartTable thead tr {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid black;
+}
+
+.cartTable tr {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.trashButton {
+  border: none;
+  cursor: pointer;
+  color: red;
+  width: 30px;
+  height: 30px;
 }
 
 .cartItem {
-    border: 1px solid black;
+  height: 20vh;
+  width: auto;
+  margin-bottom: 1rem;
+}
+
+.cartItem td {
+  font-size: 1.8rem;
+  width: 100px;
+}
+
+.cartItem td,
+.cartImg {
+  margin-left: -55px;
+}
+
+.cartTable {
+  width: 100%;
+  height: 80%;
+}
+
+.totalCart {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.totalCart h4 {
+  font-size: 3rem;
+  margin-right: 4rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.total {
+  margin-left: 2rem;
+  font-size: 2rem;
+}
+
+/* Delete Cart Button */
+.deleteCart {
+  width: 150px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background: red;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  background: #e62222;
+  font-size: 15px;
+}
+
+.deleteCart,
+.deleteCart span {
+  transition: 200ms;
+}
+
+.deleteCart .text {
+  transform: translateX(35px);
+  color: white;
+  font-weight: bold;
+  margin-left: -5px;
+}
+
+.deleteCart .icon {
+  position: absolute;
+  transform: translateX(110px);
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.deleteCart svg {
+  width: 15px;
+  fill: #eee;
+}
+
+.deleteCart:hover {
+  background: #ff3636;
+}
+
+.deleteCart:hover .text {
+  color: transparent;
+}
+
+.deleteCart:hover .icon {
+  width: 150px;
+  border-left: none;
+  transform: translateX(0);
+}
+
+.deleteCart:focus {
+  outline: none;
+}
+
+.deleteCart:active .icon svg {
+  transform: scale(0.8);
 }
 
 
+.emptyCart {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
