@@ -70,25 +70,4 @@ const ItemListContainer = () => {
 
 export default ItemListContainer;
 
-// const getProducts = new Promise((res, rej) => {
-//   const prodFiltrados = guitarras.filter(
-//     (guitarra) => guitarra.category === categoryName
-//   );
-//   setTimeout(() => {
-//     res(categoryName ? prodFiltrados : guitarras);
-//   }, 500);
-// });
-// getProducts
-//   .then((data) => {
-//     setProducts(data);
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   })
-//   .finally(() => {
-//     setIsLoading(false);
-//   });
 
-// return () => {
-//   setIsLoading(true);
-// };

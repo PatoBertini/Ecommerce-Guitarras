@@ -1,24 +1,34 @@
 import React from "react";
 import "./cart.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import { AiFillDelete } from "react-icons/ai";
+import Form from "../Form/Form";
 
 const Cart = () => {
+  const [idCompra, setIdCompra] = useState("");
   const { cart, removeItem, clearCart, totalCart } = useContext(CartContext);
   // console.log(cart);
 
   const calculateCart = totalCart();
 
+  const handleId = (id) => {
+    setIdCompra(id);
+  };
+
+  if(idCompra){
+    return <h1>Gracias por comprar tu id es: {idCompra}</h1>
+  }
+
   if (cart.length === 0) {
-    return(
-      <div className='emptyCart'>
+    return (
+      <div className="emptyCart">
         <h1>TU CARRITO ESTA VACIO</h1>
         <h2> Anda y comprate una buena viola</h2>
-        <Link to='/'>Ve a comprar</Link>
+        <Link to="/">Ve a comprar</Link>
       </div>
-    )
+    );
   }
 
   return (
@@ -67,11 +77,9 @@ const Cart = () => {
         </button>
       </div>
 
-      {/* <Form/> */}
+      <Form cart={cart} calculateCart={calculateCart} clearCart={clearCart} handleId={handleId}/>
     </div>
   );
 };
 
 export default Cart;
-
-
