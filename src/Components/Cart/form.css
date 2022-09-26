@@ -1,0 +1,18 @@
+.formSection {
+  padding: 5rem 10%;
+
+  height: 60vh;
+}
+
+.formSection form{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.formSection form input{
+    width: 500px;
+}

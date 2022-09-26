@@ -4,22 +4,31 @@ import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import { AiFillDelete } from "react-icons/ai";
-import Form from "../Form/Form";
+import Form from "./Form";
 
 const Cart = () => {
   const [idCompra, setIdCompra] = useState("");
   const { cart, removeItem, clearCart, totalCart } = useContext(CartContext);
-  // console.log(cart);
-
   const calculateCart = totalCart();
 
   const handleId = (id) => {
     setIdCompra(id);
   };
 
-  if(idCompra){
-    return <h1>Gracias por comprar tu id es: {idCompra}</h1>
+  if (idCompra) {
+    return <h1>Gracias por comprar tu id es: {idCompra}</h1>;
   }
+
+  // if (buy) {
+  //   return (
+  //     <Form
+  //       cart={cart}
+  //       calculateCart={calculateCart}
+  //       clearCart={clearCart}
+  //       handleId={handleId}
+  //     />
+  //   );
+  // }
 
   if (cart.length === 0) {
     return (
@@ -61,6 +70,11 @@ const Cart = () => {
         <h4>
           Total Cart: <span className="total">€ {calculateCart}</span>
         </h4>
+        <Link to="/form">
+          <button className="buyCart" >
+            <span className="text">Buy Now</span>
+          </button>
+        </Link>
 
         <button className="deleteCart" onClick={clearCart}>
           <span className="text">Clear Cart</span>
@@ -76,8 +90,6 @@ const Cart = () => {
           </span>
         </button>
       </div>
-
-      <Form cart={cart} calculateCart={calculateCart} clearCart={clearCart} handleId={handleId}/>
     </div>
   );
 };

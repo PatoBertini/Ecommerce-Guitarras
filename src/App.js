@@ -6,6 +6,7 @@ import ItemDetailContainer from "./Components/ItemDetailContainer/ItemDetailCont
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import Cart from "./Components/Cart/Cart";
 import CartProvider from "./context/CartContext";
+import Form from "./Components/Cart/Form";
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
         <Route
           path="/cart"
           element={<Cart/>}
+        />
+         <Route
+          path="/form"
+          element={<Form/>}
         />
         <Route path="*" element={<h1>Error 404 Element Not Found</h1>}></Route>
         </Route>

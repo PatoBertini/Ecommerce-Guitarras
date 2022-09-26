@@ -12,10 +12,16 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
-
+  background-color: black;
   justify-content: center;
+  color: white;
   align-items: center;
   text-align: center;
+}
+
+.bannerTextContent h1 {
+  margin-bottom: 3rem;
+  font-size: 3rem;
 }
 
 /* Carousel Section */
@@ -36,6 +42,7 @@
 .carousel-div h1 {
   position: absolute;
   top: 30%;
+  margin-left: 6rem;
   z-index: 1;
   font-size: 3rem;
   letter-spacing: 0.7rem;
@@ -43,17 +50,115 @@
   color: white;
 }
 
-.bestSellerConteiner{
-    height: 70vh;
-    display: flex;
-    
-    /* flex-direction: column; */
+.bannerTextContent h3 {
+  padding: 1rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.7rem;
 }
-.bestSellerData{
-    flex: 1;
+
+.bestSellerConteiner {
+  height: 70vh;
+  display: flex;
+  position: relative;
+
+  /* flex-direction: column; */
+}
+.bestSellerData {
+  flex: 1;
 }
 
 .bestSellerCards {
-    width: 50%;
-   
+  width: 80%;
 }
+
+.bestSellerData {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.bestSellerData h1,
+h3,
+button {
+  margin-bottom: 4rem;
+}
+
+.bestSellerData button {
+  width: 100px;
+  margin: 0 auto;
+}
+
+.bestSellerData button {
+  width: 6.5em;
+  height: 2.3em;
+  margin: 0.5em;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.bestSellerData button:hover {
+  color: black;
+}
+
+.bestSellerData button:after {
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+.bestSellerData button:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.imggCardConteiner {
+  height: auto;
+  width: auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.bestCard {
+  height: 350px;
+}
+
+.buyButtom{
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border: 1px solid #000;
+  color: #000;
+  background: transparent;
+}
+
+.buyButtom:hover{
+  color: white;
+  background-color: black;
+}
+

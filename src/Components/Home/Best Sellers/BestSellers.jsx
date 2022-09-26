@@ -1,26 +1,74 @@
 import "../Home.css";
-import Carousel from "react-multi-carousel";
+import Slider from "react-slick";
 import "react-multi-carousel/lib/styles.css";
-import prueba from '../../../assets/images/mango-1.jpeg'
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { db } from "../../../firebase/firebaseConfig";
+import Counter from "../../Counter/Counter";
 
 export const BestSellers = () => {
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 3000 },
-      items: 1,
-    },
-    desktop: {
-      breakpoint: { max: 3000, min: 1024 },
-      items: 1,
-    },
-    tablet: {
-      breakpoint: { max: 1024, min: 464 },
-      items: 1,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setIsLoading(true);
+    const itemCollection = collection(db, "productos");
+    const q = query(itemCollection, where("subcategory", "==", "bestSeller"));
+    getDocs(q)
+      .then((resp) => {
+        const productos = resp.docs.map((prod) => {
+          return {
+            id: prod.id,
+            ...prod.data(),
+          };
+        });
+
+        setProducts(productos);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, []);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -31,16 +79,21 @@ export const BestSellers = () => {
         <button>View Shop</button>
       </div>
       <div className="bestSellerCards">
-        <Carousel
-          responsive={responsive}
-          infinite={true}
-          draggable={true}
-          className="slider"
-        >
-          <div>
-            <img src={prueba} alt="" />
-          </div>
-        </Carousel>
+        <Slider {...settings}>
+          {products.map((product) => {
+            return (
+              <div className="imggCardConteiner">
+                <img src={product.img} alt="guitarra" className="bestCard" />
+                <h2>{product.nombre}</h2>
+                <h3>Price: {product.precio} €</h3>
+               <Link to={`/detail/${product.id}`} >
+               <button className="buyButtom">Buy</button>
+               </Link>
+              </div>
+            );
+          })}
+
+        </Slider>
       </div>
     </div>
   );

@@ -36,7 +36,7 @@ const OwnCarousel = () => {
       >
         <div className="carousel-div">
           <img src={car1} alt="" />
-          <h1>Find your best guitarr</h1>
+          <h1>Find the guitar that best suits you</h1>
         </div>
         <div className="carousel-div">
           <img src={car2} alt="" />
@@ -49,7 +49,7 @@ const OwnCarousel = () => {
         </div>
         <div className="carousel-div">
           <img src={car4} alt="" />
-          <h1>CLASSICS GUITARS</h1>
+          <h1>BASSES</h1>
         </div>
       </Carousel>
     </>

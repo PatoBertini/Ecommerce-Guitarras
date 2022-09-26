@@ -10,6 +10,7 @@ import { useState } from "react";
 import Cart from "../Cart/Cart";
 import { db } from '../../firebase/firebaseConfig';
 import "../Cart/cart.css";
+import './form.css'
 
 const Form = ({ cart, calculateCart, clearCart, handleId }) => {
   const [nombre, setNombre] = useState("");
@@ -57,7 +58,7 @@ const Form = ({ cart, calculateCart, clearCart, handleId }) => {
   };
 
   return (
-    <div>
+    <div className="formSection">
       <form action="" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -75,7 +76,7 @@ const Form = ({ cart, calculateCart, clearCart, handleId }) => {
         />
         <input
           type="text"
-          placeholder="adress"
+          placeholder="Adress"
           name="direccion"
           value={direccion}
           onChange={handleDireccionInput}

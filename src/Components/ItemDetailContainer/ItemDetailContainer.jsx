@@ -37,7 +37,6 @@ const ItemDetailContainer = () => {
   // console.log(product);
   return (
     <div className="probando">
-      <h1>ItemDetailContainer</h1>
       {loading ? (
         <ClipLoader
           color="#000000"
