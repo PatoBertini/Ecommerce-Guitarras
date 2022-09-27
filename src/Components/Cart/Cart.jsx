@@ -8,6 +8,7 @@ import Form from "./Form";
 
 const Cart = () => {
   const [idCompra, setIdCompra] = useState("");
+  const [form, setForm] = useState(false);
   const { cart, removeItem, clearCart, totalCart } = useContext(CartContext);
   const calculateCart = totalCart();
 
@@ -15,27 +16,34 @@ const Cart = () => {
     setIdCompra(id);
   };
 
-  if (idCompra) {
-    return <h1>Gracias por comprar tu id es: {idCompra}</h1>;
+  const handleClick = () => {
+    setForm(true)
   }
 
-  // if (buy) {
-  //   return (
-  //     <Form
-  //       cart={cart}
-  //       calculateCart={calculateCart}
-  //       clearCart={clearCart}
-  //       handleId={handleId}
-  //     />
-  //   );
-  // }
+  if (idCompra && !form) {
+    return <h1 className="idRta">Gracias por comprar tu id es: {idCompra}</h1>;
+  }
+
+  if (form ) {
+    return (
+      <Form
+        cart={cart}
+        calculateCart={calculateCart}
+        clearCart={clearCart}
+        handleId={handleId}
+        setForm={setForm}
+      />
+      
+    );
+  }
 
   if (cart.length === 0) {
     return (
       <div className="emptyCart">
-        <h1>TU CARRITO ESTA VACIO</h1>
-        <h2> Anda y comprate una buena viola</h2>
-        <Link to="/">Ve a comprar</Link>
+        <h1 className="carroVacio">YOUR CART IS EMPTY</h1>
+        <Link to="/" ><button className="buttonDetail">
+          Go Buy!
+        </button></Link>
       </div>
     );
   }
@@ -70,11 +78,11 @@ const Cart = () => {
         <h4>
           Total Cart: <span className="total">€ {calculateCart}</span>
         </h4>
-        <Link to="/form">
-          <button className="buyCart" >
-            <span className="text">Buy Now</span>
+        
+          <button className="buyCart">
+            <span className="text" onClick={handleClick}>Buy Now</span>
           </button>
-        </Link>
+        
 
         <button className="deleteCart" onClick={clearCart}>
           <span className="text">Clear Cart</span>
@@ -95,3 +103,5 @@ const Cart = () => {
 };
 
 export default Cart;
+
+

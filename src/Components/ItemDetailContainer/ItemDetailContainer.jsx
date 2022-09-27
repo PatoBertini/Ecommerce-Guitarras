@@ -55,27 +55,4 @@ const ItemDetailContainer = () => {
 
 export default ItemDetailContainer;
 
-// debe mostar un producto
-// hacer una promesa que reciba el producto y pasarlo por prop al hijo
 
-// const getItem = () =>
-// new Promise((res, rej) => {
-//   const prodVisible = guitarras.find(
-//     (prod) => prod.id === idProdNumerico
-//   );
-//   // console.log(prodVisible);
-//   setTimeout(() => {
-//     res(prodVisible);
-//   }, 1000);
-// });
-
-// getItem()
-// .then((data) => {
-//   setProduct(data);
-// })
-// .catch((error) => {
-//   console.log(error);
-// })
-// .finally(() => {
-//   setIsLoading(false);
-// });

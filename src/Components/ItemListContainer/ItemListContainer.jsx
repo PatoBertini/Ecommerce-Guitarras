@@ -45,6 +45,8 @@ const ItemListContainer = () => {
       });
   }, [categoryName]);
 
+
+
   return (
     <div className="sectionContainer">
       <h2>Explore Models</h2>

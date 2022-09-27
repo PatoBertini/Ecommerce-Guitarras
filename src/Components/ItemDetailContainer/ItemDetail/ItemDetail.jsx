@@ -4,21 +4,35 @@ import Counter from "../../Counter/Counter";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../../context/CartContext";
+import toast, { Toaster } from "react-hot-toast";
 
 const ItemDetail = ({ product }) => {
   const [cantidad, setCantidad] = useState(0);
   const { cart, addToCart, isInCart } = useContext(CartContext);
 
+  const notify = () =>
+    toast.success("Item Loaded To The Cart.", {
+      style: {
+        border: "1px solid green",
+        padding: "16px",
+        color: "green",
+      },
+      iconTheme: {
+        primary: "green",
+        secondary: "white",
+      },
+      duration: 3000,
+    });
+
   // desestructuramos useContext y obtenemos la funcion addToCart del context CartContext
 
   const onAdd = (quantity) => {
-    setCantidad((prevState)=>prevState + quantity);
+    setCantidad((prevState) => prevState + quantity);
     addToCart(product, quantity);
     isInCart(product);
+    notify();
   };
   // Esta funcion esta declarada en el padre y se ejecuta en el hijo, cuando hace click el hijo envia la data por parametro
-
-  
 
   return (
     <div className="itemDetailConteiner">
@@ -36,8 +50,11 @@ const ItemDetail = ({ product }) => {
         {cantidad === 0 ? (
           <Counter stock={product.stock} initial={1} onAdd={onAdd} />
         ) : (
-          <Link to="/cart">Ir al carrito</Link>
+          <Link to="/cart">
+            <button className="buttonDetail" >Ir al carrito</button>
+          </Link>
         )}
+        <Toaster position="top-right" reverseOrder={false} />
       </div>
     </div>
   );

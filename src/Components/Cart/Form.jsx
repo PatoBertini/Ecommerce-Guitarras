@@ -8,15 +8,30 @@ import {
 import React from "react";
 import { useState } from "react";
 import Cart from "../Cart/Cart";
-import { db } from '../../firebase/firebaseConfig';
+import { db } from "../../firebase/firebaseConfig";
 import "../Cart/cart.css";
-import './form.css'
+import "./form.css";
+import toast, { Toaster } from "react-hot-toast";
 
-const Form = ({ cart, calculateCart, clearCart, handleId }) => {
+const Form = ({ cart, calculateCart, clearCart, handleId, setForm }) => {
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
   const [email, setEmail] = useState("");
   const [direccion, setDireccion] = useState("");
+  const notify = () =>
+    toast.success("Purchase success.", {
+      style: {
+        border: "1px solid green",
+        padding: "16px",
+        color: "green",
+      },
+      iconTheme: {
+        primary: "green",
+        secondary: "white",
+      },
+      duration: 3000,
+    });
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -29,12 +44,14 @@ const Form = ({ cart, calculateCart, clearCart, handleId }) => {
 
     const ordersCollection = collection(db, "orders");
 
-    addDoc(ordersCollection, order)
-    .then((res)=>{
-      handleId(res.id)
-      clearCart()
-      // updateProd()
-    })
+    addDoc(ordersCollection, order).then((res) => {
+      handleId(res.id);
+      clearCart();
+      notify();
+      setTimeout(() => {
+        setForm(false);
+      }, 2000);
+    });
   };
 
   // const updateProd = ()=>{
@@ -88,7 +105,8 @@ const Form = ({ cart, calculateCart, clearCart, handleId }) => {
           value={email}
           onChange={handleEmailInput}
         />
-        <button>Realizar Compra</button>
+        <button onClick={notify}>Realizar Compra</button>
+        <Toaster position="top-right" reverseOrder={false} />
       </form>
     </div>
   );

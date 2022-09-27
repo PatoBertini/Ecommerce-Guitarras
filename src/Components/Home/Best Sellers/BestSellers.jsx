@@ -74,9 +74,9 @@ export const BestSellers = () => {
   return (
     <div className="bestSellerConteiner">
       <div className="bestSellerData">
-        <h1>This are our most wanted guitar's</h1>
+        <h1>This are our most wanted products</h1>
         <h3>Go and give an eye to this fantastic's guitars</h3>
-        <button>View Shop</button>
+     
       </div>
       <div className="bestSellerCards">
         <Slider {...settings}>
@@ -86,13 +86,12 @@ export const BestSellers = () => {
                 <img src={product.img} alt="guitarra" className="bestCard" />
                 <h2>{product.nombre}</h2>
                 <h3>Price: {product.precio} €</h3>
-               <Link to={`/detail/${product.id}`} >
-               <button className="buyButtom">Buy</button>
-               </Link>
+                <Link to={`/detail/${product.id}`}>
+                  <button className="buyButtom">Buy</button>
+                </Link>
               </div>
             );
           })}
-
         </Slider>
       </div>
     </div>

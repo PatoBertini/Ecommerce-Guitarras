@@ -3,8 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus, faCartPlus } from "@fortawesome/free-solid-svg-icons";
 import "../ItemDetailContainer/ItemDetail.css";
 
-
-
 const Counter = ({ initial, onAdd, stock }) => {
   const [count, setCount] = useState(initial);
 
@@ -42,8 +40,7 @@ const Counter = ({ initial, onAdd, stock }) => {
       </div>
       <div className="agregarCarrito">
         <button className="buttonDetail" onClick={agregar}>
-         
-        <FontAwesomeIcon icon={faCartPlus} className="buttonCart" /> Add Cart
+          <FontAwesomeIcon icon={faCartPlus} className="buttonCart" /> Add Cart
         </button>
       </div>
     </div>
