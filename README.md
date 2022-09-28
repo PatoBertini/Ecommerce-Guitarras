@@ -1,7 +1,7 @@
 # React Ecommerce Guitars
 ## Intro
 He elaborado este ecommerce con el fin de practicar mis conocimientos con el framework de React js. 
-Tiene un fin unicamente de aprendisaje.
+Tiene un fin unicamente de aprendizaje.
 
 ## Gif del proyecto
 
