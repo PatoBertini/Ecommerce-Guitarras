@@ -48,7 +48,7 @@ const CartProvider = ({ children }) => {
   const totalCart = () => {
     let valorInicial = 0;
     cart.forEach((prod) => (valorInicial += prod.precio * prod.cantidad));
-    console.log(valorInicial);
+
     return valorInicial;
   };
 

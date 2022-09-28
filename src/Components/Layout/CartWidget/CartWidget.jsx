@@ -11,7 +11,7 @@ const CartWidget = () => {
 const { cart, totalCartWidget } = useContext(CartContext)
 
 const cantidadCart = totalCartWidget()
-console.log(cantidadCart);
+
 
 
 
