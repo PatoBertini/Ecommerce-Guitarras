@@ -27,7 +27,7 @@
 }
 
 .textCardConteiner h3 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   text-align: center;
   border: 1px black solid;
 }
@@ -98,3 +98,4 @@ h5 {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+

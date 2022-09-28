@@ -5,6 +5,7 @@ import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
 import { AiFillDelete } from "react-icons/ai";
 import Form from "./Form";
+import compra from "../../assets/images/thankyou.jpeg";
 
 const Cart = () => {
   const [idCompra, setIdCompra] = useState("");
@@ -17,14 +18,19 @@ const Cart = () => {
   };
 
   const handleClick = () => {
-    setForm(true)
-  }
+    setForm(true);
+  };
 
   if (idCompra && !form) {
-    return <h1 className="idRta">Gracias por comprar tu id es: {idCompra}</h1>;
+    return (
+      <div className="thank">
+        <img src={compra} alt="" />
+        <h1 className="idRta">Gracias por comprar tu id es: <span className="otroColor">{idCompra}</span></h1>
+      </div>
+    );
   }
 
-  if (form ) {
+  if (form) {
     return (
       <Form
         cart={cart}
@@ -33,7 +39,6 @@ const Cart = () => {
         handleId={handleId}
         setForm={setForm}
       />
-      
     );
   }
 
@@ -41,9 +46,9 @@ const Cart = () => {
     return (
       <div className="emptyCart">
         <h1 className="carroVacio">YOUR CART IS EMPTY</h1>
-        <Link to="/" ><button className="buttonDetail">
-          Go Buy!
-        </button></Link>
+        <Link to="/">
+          <button className="buttonDetail">Go Buy!</button>
+        </Link>
       </div>
     );
   }
@@ -78,11 +83,12 @@ const Cart = () => {
         <h4>
           Total Cart: <span className="total">€ {calculateCart}</span>
         </h4>
-        
-          <button className="buyCart">
-            <span className="text" onClick={handleClick}>Buy Now</span>
-          </button>
-        
+
+        <button className="buyCart">
+          <span className="text" onClick={handleClick}>
+            Buy Now
+          </span>
+        </button>
 
         <button className="deleteCart" onClick={clearCart}>
           <span className="text">Clear Cart</span>
@@ -103,5 +109,3 @@ const Cart = () => {
 };
 
 export default Cart;
-
-

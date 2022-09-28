@@ -76,6 +76,7 @@ const Form = ({ cart, calculateCart, clearCart, handleId, setForm }) => {
 
   return (
     <div className="formSection">
+   
       <form action="" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -83,6 +84,7 @@ const Form = ({ cart, calculateCart, clearCart, handleId, setForm }) => {
           name="nombre"
           value={nombre}
           onChange={handleNameInput}
+          required
         />
         <input
           type="text"
@@ -90,6 +92,7 @@ const Form = ({ cart, calculateCart, clearCart, handleId, setForm }) => {
           name="apellido"
           value={apellido}
           onChange={handleApellidoInput}
+          required
         />
         <input
           type="text"
@@ -97,6 +100,7 @@ const Form = ({ cart, calculateCart, clearCart, handleId, setForm }) => {
           name="direccion"
           value={direccion}
           onChange={handleDireccionInput}
+          required
         />
         <input
           type="email"
@@ -104,8 +108,9 @@ const Form = ({ cart, calculateCart, clearCart, handleId, setForm }) => {
           name="email"
           value={email}
           onChange={handleEmailInput}
+          required
         />
-        <button onClick={notify}>Realizar Compra</button>
+        <button className="buttonDetail" onClick={notify}>Realizar Compra</button>
         <Toaster position="top-right" reverseOrder={false} />
       </form>
     </div>

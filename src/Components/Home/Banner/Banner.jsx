@@ -10,7 +10,7 @@ const Banner = () => {
       </div>
       <div className='bannerTextContent'>
         <h1>Chords of angel's</h1>
-        <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem similique earum, reiciendis accusamus ad ab.</h3>
+        <h3>Where we found love in lyrics and music. Check our first virtual shop and buy the best products in store.</h3>
       </div>
     </div>
   )
