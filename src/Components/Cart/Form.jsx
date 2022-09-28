@@ -1,13 +1,7 @@
-import {
-  addDoc,
-  collection,
-  doc,
-  serverTimestamp,
-  updateDoc,
-} from "firebase/firestore";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import React from "react";
 import { useState } from "react";
-import Cart from "../Cart/Cart";
+
 import { db } from "../../firebase/firebaseConfig";
 import "../Cart/cart.css";
 import "./form.css";
@@ -32,7 +26,6 @@ const Form = ({ cart, calculateCart, clearCart, handleId, setForm }) => {
       duration: 3000,
     });
 
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const order = {
@@ -54,10 +47,6 @@ const Form = ({ cart, calculateCart, clearCart, handleId, setForm }) => {
     });
   };
 
-  // const updateProd = ()=>{
-  //   const orderDoc = doc(db,'orders',)
-  // }
-
   const handleNameInput = (event) => {
     setNombre(event.target.value);
   };
@@ -76,7 +65,6 @@ const Form = ({ cart, calculateCart, clearCart, handleId, setForm }) => {
 
   return (
     <div className="formSection">
-   
       <form action="" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -110,7 +98,9 @@ const Form = ({ cart, calculateCart, clearCart, handleId, setForm }) => {
           onChange={handleEmailInput}
           required
         />
-        <button className="buttonDetail" onClick={notify}>Realizar Compra</button>
+        <button className="buttonDetail" onClick={notify}>
+          Realizar Compra
+        </button>
         <Toaster position="top-right" reverseOrder={false} />
       </form>
     </div>

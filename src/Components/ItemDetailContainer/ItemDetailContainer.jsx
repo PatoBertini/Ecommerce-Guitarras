@@ -11,9 +11,7 @@ const ItemDetailContainer = () => {
   const [loading, setLoading] = useState(true);
 
   const { idProducto } = useParams(); // muy importante usar mismo nombre que en el path de app.js
-  // console.log(idProducto);
-  // const idProdNumerico = Number(idProducto);
-  // console.log(idProdNumerico);
+
 
   useEffect(() => {
     setLoading(true);
@@ -22,8 +20,6 @@ const ItemDetailContainer = () => {
     const ref = doc(itemCollection, idProducto);
     getDoc(ref)
       .then((res) => {
-        // console.log(res);
-        // console.log(res.data());
         setProduct({ id: res.id, ...res.data() });
       })
       .catch((error) => {
@@ -34,7 +30,7 @@ const ItemDetailContainer = () => {
       });
   }, [idProducto]);
 
-  // console.log(product);
+
   return (
     <div className="probando">
       {loading ? (

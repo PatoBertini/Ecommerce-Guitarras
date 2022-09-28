@@ -8,7 +8,7 @@ import "../Layout.css";
 
 const CartWidget = () => {
   
-const { cart, totalCartWidget } = useContext(CartContext)
+const {  totalCartWidget } = useContext(CartContext)
 
 const cantidadCart = totalCartWidget()
 

@@ -29,7 +29,6 @@ const CartProvider = ({ children }) => {
     const newCart = cart.map((prod) => {
       if (product.id === prod.id) {
         const newProduct = { ...prod, cantidad: cantidad + prod.cantidad };
-        // console.log(newProduct);
         return newProduct;
       } else {
         return prod;
